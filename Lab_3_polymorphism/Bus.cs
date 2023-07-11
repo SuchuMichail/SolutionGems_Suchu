@@ -20,10 +20,10 @@ class Bus : AVehicle
         var enumColorLength = Enum.GetNames(typeof(VehicleColor)).Length;
 
         Color = (VehicleColor)new Random().Next(enumColorLength);
-        LicensePlateNumber = new Random().Next(100, 999);
+        LicensePlateNumber = new Random().Next(100, 1000);
         HasPassenger = new Random().NextDouble() > 0.5;
 
-        Speed = new Random().Next(80, 110);
+        Speed = new Random().Next(80, 111);
     }
 
     public override int GetSpeed()
