@@ -4,7 +4,7 @@ public static class Extensions
 {
     public static TSource First<TSource>(this IEnumerable<TSource>? collection)
     {
-        if (collection == null || collection.Count() == 0)
+        if (collection == null || !collection.Any())
         {
             throw new InvalidOperationException();
         }
@@ -14,7 +14,7 @@ public static class Extensions
 
     public static TSource First<TSource>(this IEnumerable<TSource>? collection, Predicate<TSource>? predicate)
     {
-        if (collection == null || collection.Count() == 0)
+        if (collection == null || !collection.Any())
         {
             throw new InvalidOperationException();
         }
@@ -39,7 +39,7 @@ public static class Extensions
 
     public static TSource? FirstOrDefault<TSource>(this IEnumerable<TSource> collection)
     {
-        if (collection == null || collection.Count() == 0)
+        if (collection == null || !collection.Any())
         {
             return default;
         }
@@ -49,7 +49,7 @@ public static class Extensions
 
     public static TSource? FirstOrDefault<TSource>(this IEnumerable<TSource>? collection, Predicate<TSource>? predicate)
     {
-        if (collection == null || collection.Count() == 0)
+        if (collection == null || !collection.Any())
         {
             return default;
         }
@@ -76,7 +76,7 @@ public static class Extensions
     {
         List<TSource> res = new List<TSource>();
 
-        if (collection == null || collection.Count() == 0)
+        if (collection == null || !collection.Any())
         {
             return res;
         }
@@ -97,7 +97,7 @@ public static class Extensions
 
     public static bool Any<TSource>(this IEnumerable<TSource>? collection) 
     {
-        if (collection == null || collection.Count() == 0)
+        if (collection == null || !collection.Any())
         {
             return false;
         }
@@ -107,7 +107,7 @@ public static class Extensions
 
     public static bool Any<TSource>(this IEnumerable<TSource>? collection, Predicate<TSource>? predicate)
     {
-        if (collection == null || collection.Count() == 0)
+        if (collection == null || !collection.Any())
         {
             return false;
         }
