@@ -23,12 +23,12 @@ class CheckPoint
         }
     }
 
-    public void RegisterVehicle(AVehicle? vehicle)
+    public void RegisterVehicle(AVehicle/*?*/ vehicle)
     {
-        if(vehicle == null)
+       /* if(vehicle == null)
         {
             throw new ArgumentNullException();
-        }
+        }*/
 
         int iterator = 0;
         bool flag = false;//является ли машина угнанной

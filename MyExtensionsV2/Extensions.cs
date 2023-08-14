@@ -37,7 +37,7 @@ public static class Extensions
 
     
 
-    public static TSource? FirstOrDefault<TSource>(this IEnumerable<TSource> collection)
+    public static TSource? FirstOrDefault<TSource>(this IEnumerable<TSource>? collection)
     {
         if (collection == null || !collection.Any())
         {

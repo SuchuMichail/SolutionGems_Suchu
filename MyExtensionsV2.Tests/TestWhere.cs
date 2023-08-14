@@ -5,7 +5,7 @@ public class TestWhere
     [Fact]
     public void Test()
     {
-        List<int> list_null = null;
+        List<int>? list_null = null;
         List<int> list_empty=new List<int>();
         List<int> list_test = new List<int>() { 1, 2, 3 };
 

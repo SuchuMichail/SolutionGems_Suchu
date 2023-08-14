@@ -9,7 +9,7 @@ public class TestFirst
         Assert.Equal(1, list.First());
 
 
-        List<int> list_null = null;
+        List<int>? list_null = null;
         List<int> list_empty = new List<int>();
 
         Assert.Throws<InvalidOperationException>(() => list_null.First());
@@ -26,7 +26,7 @@ public class TestFirst
 
         Assert.Throws<InvalidOperationException>(() => list.First(o => o < 0));
 
-        List<int> list_null = null;
+        List<int>? list_null = null;
         List<int> list_empty = new List<int>();
 
         Assert.Throws<InvalidOperationException>(() => list_null.First(o => o > 1));

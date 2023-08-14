@@ -20,7 +20,7 @@ class Program
         while (!Console.KeyAvailable)
         {
             typeVehicle = random.Next(enumVehicleTypesLength);
-            AVehicle vehicle = null;
+            AVehicle vehicle = new Car();
 
             if(typeVehicle == (int)VehicleType.Car)
             {
