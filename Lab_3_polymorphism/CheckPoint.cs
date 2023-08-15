@@ -11,6 +11,10 @@ class CheckPoint
     private CheckPointStatistics statistics;
     private List<int> stolenNumbers;
 
+    public event EventHandler<VehicleEventArgs>? OnVehiclePass;
+    public event EventHandler<VehicleEventArgs>? OnVehicleSpeeding;
+    public event EventHandler<VehicleEventArgs>? OnVehicleStolen;
+
     public CheckPoint(List<int> stolen_num)
     {
         speed = 0;
@@ -25,10 +29,12 @@ class CheckPoint
 
     public void RegisterVehicle(AVehicle/*?*/ vehicle)
     {
-       /* if(vehicle == null)
-        {
-            throw new ArgumentNullException();
-        }*/
+        /* if(vehicle == null)
+         {
+             throw new ArgumentNullException();
+         }*/
+
+        OnVehiclePass?.Invoke(vehicle, new VehicleEventArgs(vehicle));
 
         int iterator = 0;
         bool flag = false;//является ли машина угнанной
@@ -37,7 +43,9 @@ class CheckPoint
         {
             if (stolenNumbers[iterator] == vehicle.LicensePlateNumber)
             {
-                Console.WriteLine("Угнанная машина. Перехват!");
+                //Console.WriteLine("Угнанная машина. Перехват!");
+                OnVehicleStolen?.Invoke(vehicle, new VehicleEventArgs(vehicle));
+
                 flag = true;
                 statistics.CarJackersCount++;
             }
@@ -46,7 +54,9 @@ class CheckPoint
 
         if(vehicle.GetSpeed() > 110)
         {
-            Console.WriteLine("Превышение скорости!");
+            //Console.WriteLine("Превышение скорости!");
+            OnVehicleSpeeding?.Invoke(vehicle, new VehicleEventArgs(vehicle));
+
             statistics.SpeedLimitBreakersCount++;
         }
 
@@ -65,6 +75,7 @@ class CheckPoint
 
         speed += vehicle.GetSpeed();
         statistics.AverageSpeed = speed / (statistics.CarsCount + statistics.TrucksCount + statistics.BusesCount);
+        
     }
 
     public CheckPointStatistics GetStatistics()
@@ -72,6 +83,8 @@ class CheckPoint
         return statistics;
     }
 
+
+    /*
     public void PrintVehicle(AVehicle? vehicle)
     {
         if (vehicle == null)
@@ -86,4 +99,5 @@ class CheckPoint
         Console.WriteLine($"Скорость: {vehicle.GetSpeed()}");
         Console.WriteLine();
     }
+   */
 }

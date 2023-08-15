@@ -3,7 +3,7 @@
 class Program
 {
     public static void Main()
-    {
+    { 
         List<int> stolenNumbers = new List<int>();
         for(int i = 100; i < 300; i++)
         {
@@ -12,6 +12,11 @@ class Program
         }
 
         CheckPoint point = new CheckPoint(stolenNumbers);
+
+        using var terminalRandom = new TrafficFlowTerminalRandom(point);
+        using var terminalSpeeding = new TrafficFlowTerminalSpeeding(point);
+        using var terminalStolen = new TrafficFlowTerminalStolen(point);
+
         Random random = new Random();
 
         var enumVehicleTypesLength = Enum.GetNames(typeof(VehicleType)).Length;
@@ -35,8 +40,14 @@ class Program
                 vehicle = new Bus();
             }
 
+            Console.WriteLine("Begin\n");
+            
             point.RegisterVehicle(vehicle);
-            point.PrintVehicle(vehicle);
+
+            Console.WriteLine("End\n******************************************\n");
+
+
+            //point.PrintVehicle(vehicle); //выводил все машины
 
             System.Threading.Thread.Sleep(random.Next(500, 5000));
         }

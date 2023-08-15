@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_0", "Lab_0\Lab_0.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_1", "Lab_1\Lab_1.csproj", "{763EEA4A-3D42-412F-BC7D-E6B0652BB328}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_3_polymorphism", "Lab_3_polymorphism\Lab_3_polymorphism.csproj", "{50F82824-2BAF-4106-B141-6EBCC8682367}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_3_&_7_polymorphism_AND_events", "Lab_3_polymorphism\Lab_3_&_7_polymorphism_AND_events.csproj", "{50F82824-2BAF-4106-B141-6EBCC8682367}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyExtensionsV2", "MyExtensionsV2\MyExtensionsV2.csproj", "{6B831A33-598A-4134-9E9D-07A0F1A94042}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyExtensionsV2", "MyExtensionsV2\MyExtensionsV2.csproj", "{6B831A33-598A-4134-9E9D-07A0F1A94042}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyExtensionsV2.Tests", "MyExtensionsV2.Tests\MyExtensionsV2.Tests.csproj", "{64FB0A66-5387-4117-A20E-82E1CB49FA6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyExtensionsV2.Tests", "MyExtensionsV2.Tests\MyExtensionsV2.Tests.csproj", "{64FB0A66-5387-4117-A20E-82E1CB49FA6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
