@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace MyExtensionsV2.Tests;
 
 public class TestFirst

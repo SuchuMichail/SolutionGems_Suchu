@@ -1,4 +1,8 @@
-﻿namespace MyExtensionsV2;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace MyExtensionsV2;
 
 public static class Extensions
 {
@@ -97,7 +101,7 @@ public static class Extensions
 
     public static bool Any<TSource>(this IEnumerable<TSource>? collection) 
     {
-        if (collection == null || !collection.Any())
+        if (collection == null || collection.Count() == 0)
         {
             return false;
         }
@@ -107,7 +111,7 @@ public static class Extensions
 
     public static bool Any<TSource>(this IEnumerable<TSource>? collection, Predicate<TSource>? predicate)
     {
-        if (collection == null || !collection.Any())
+        if (collection == null || collection.Count() == 0)
         {
             return false;
         }

@@ -1,4 +1,6 @@
-﻿namespace MyExtensionsV2.Tests;
+﻿using System.Collections.Generic;
+
+namespace MyExtensionsV2.Tests;
 
 public class TestWhere
 {
