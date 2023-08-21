@@ -9,5 +9,6 @@ namespace MyUnit
     public class MyAssertTestFailureException : Exception
     {
         public MyAssertTestFailureException() { }
+
     }
 }
