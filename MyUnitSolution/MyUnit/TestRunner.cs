@@ -18,11 +18,23 @@ namespace MyUnit
                 .GetMethods()
                 .Where(o => o.GetCustomAttribute(typeof(MyInlineDataAttribute)) is not null);
 
-            /*var allMethods = sourceType
-                .GetMethods()
-                .Where(o => o.GetCustomAttributes() is not null);*/
 
-            foreach(var method in methodsFact)
+            //проверял, какие методы имеют атрибут MyFact, а какие MyInlineData
+            //оказалось, что важно использовать GetCustomAttribute, а не GetCustomAttributes
+
+            /*Console.WriteLine("      fact");
+            foreach(var met in methodsFact)
+            {
+                Console.WriteLine(met.Name);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("      inlinedata");
+            foreach (var met in methodsInlineData)
+            {
+                Console.WriteLine(met.Name);
+            }*/
+
+            foreach (var method in methodsFact)
             {
                 if (methodsInlineData.Contains(method))
                 {
