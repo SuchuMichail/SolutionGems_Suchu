@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lab5_AKM\Lab5.Tests\Lab5.Tests.csproj" />
-    <ProjectReference Include="..\MyUnitSolution\MyUnit\MyUnit.csproj" />
+    <ProjectReference Include="..\..\MyUnitSolution\MyUnit\MyUnit.csproj" />
+    <ProjectReference Include="..\Lab5.Tests\Lab5.Tests.csproj" />
   </ItemGroup>
 
 </Project>
