@@ -9,7 +9,7 @@ namespace MyUnit.Attributes
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public class MyInlineDataAttribute : Attribute
     {
-        public object[] Paramet;
+        private object[] Paramet;
 
         public MyInlineDataAttribute(params object[] parameters)
         {

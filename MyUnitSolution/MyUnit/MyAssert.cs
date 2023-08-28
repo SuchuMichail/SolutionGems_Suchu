@@ -38,5 +38,20 @@ namespace MyUnit
                 }
             }
         }
+
+        public static void Throws<T>(Action lambda)
+        {
+            try
+            {
+                lambda.Invoke();
+            }
+            catch (Exception ex)
+            {
+                if (ex.GetType() == typeof(T)) return;
+                
+            }
+            
+            throw new MyAssertTestFailureException();
+        } 
     }
 }
