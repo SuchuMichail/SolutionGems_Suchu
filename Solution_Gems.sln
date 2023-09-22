@@ -27,7 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab5", "Lab5_AKM\Lab5\Lab5.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab5.Tests", "Lab5_AKM\Lab5.Tests\Lab5.Tests.csproj", "{A3E0DBCC-3422-41FA-BF91-B0115635B5E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab5.Console", "Lab5_AKM\Lab5.Console\Lab5.Console.csproj", "{C032325C-0C54-4541-A278-DCC82B5056B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab5.Console", "Lab5_AKM\Lab5.Console\Lab5.Console.csproj", "{C032325C-0C54-4541-A278-DCC82B5056B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoTest", "GeoTest\GeoTest.csproj", "{B247681A-4910-4291-A4E8-FA496FCB636D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoExercise1", "GeoExercise1\GeoExercise1.csproj", "{14BD874D-DA5C-434A-BCC0-8556F28D22E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +83,14 @@ Global
 		{C032325C-0C54-4541-A278-DCC82B5056B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C032325C-0C54-4541-A278-DCC82B5056B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C032325C-0C54-4541-A278-DCC82B5056B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B247681A-4910-4291-A4E8-FA496FCB636D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B247681A-4910-4291-A4E8-FA496FCB636D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B247681A-4910-4291-A4E8-FA496FCB636D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B247681A-4910-4291-A4E8-FA496FCB636D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14BD874D-DA5C-434A-BCC0-8556F28D22E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14BD874D-DA5C-434A-BCC0-8556F28D22E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14BD874D-DA5C-434A-BCC0-8556F28D22E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14BD874D-DA5C-434A-BCC0-8556F28D22E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
