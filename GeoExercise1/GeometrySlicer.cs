@@ -36,7 +36,7 @@ namespace GeoExercise1
             coor_first[3] = ring[0];
 
             Coordinate[] coor_second = new Coordinate[ring.Count-1];
-            for (int i=2; i < ring.Count-1; i++){
+            for (int i = 2; i < ring.Count-1; i++){
                 coor_second[i - 2] = ring[i];
             }
             coor_second[ring.Count - 3] = ring[0];
@@ -51,20 +51,20 @@ namespace GeoExercise1
             return new LinearRing[2] { lnr1, lnr2 };
         }
 
-        public LinearRing[] SliceOnEqualFigures(LinearRing ring)
+        public LinearRing[] SliceOnSameAmountAnglesFigures(LinearRing ring)
         {
             Coordinate[] coor_first = new Coordinate[(ring.Count - 1) / 2 + 2];
             Coordinate[] coor_second;
             if ( (ring.Count-1) % 2 == 0 ) 
             {
-                coor_second = new Coordinate[(ring.Count-1)/2 + 2];
+                coor_second = new Coordinate[(ring.Count - 1) / 2 + 2];
             }
             else
             {
-                coor_second = new Coordinate[(ring.Count-1)/2 + 3];
+                coor_second = new Coordinate[(ring.Count - 1) / 2 + 3];
             }
 
-            for(int i=0; i < (ring.Count-1)/2 + 1; i++)
+            for(int i = 0; i < (ring.Count - 1) / 2 + 1; i++)
             {
                 coor_first[i] = ring[i];
             }
@@ -74,7 +74,7 @@ namespace GeoExercise1
             {
                 coor_second[i - ((ring.Count - 1) / 2)] = ring[i];
             }
-            coor_second[coor_second.Length - 1] = ring[(ring.Count-1)/2];
+            coor_second[coor_second.Length - 1] = ring[(ring.Count - 1) / 2];
 
 
             var gf = NetTopologySuite.NtsGeometryServices.Instance.CreateGeometryFactory(4326);
@@ -84,5 +84,45 @@ namespace GeoExercise1
 
             return new LinearRing[2] { lnr1, lnr2 };
         }
+
+        public void Rec(LinearRing ring, int max_count, List<LinearRing> list)
+        {
+            LinearRing[] new_rings = SliceOnSameAmountAnglesFigures(ring);
+
+            if (new_rings[0].Count - 1 > max_count)
+            {
+                Rec(new_rings[0], max_count, list);
+            }
+            else
+            {
+                list.Add(new_rings[0]);
+            }
+                
+            if (new_rings[1].Count - 1 > max_count)
+            {
+                Rec(new_rings[1], max_count, list);
+            }
+            else
+            {
+                list.Add(new_rings[1]);
+            }
+        }
+
+        public List<LinearRing> SliceWithMaxCountAngles(LinearRing ring, int max_count)
+        {
+            List<LinearRing> list = new List<LinearRing>();
+
+            if (ring.Count - 1 > max_count)
+            {
+                Rec(ring, max_count, list);
+            }
+            else
+            {
+                list.Add(ring);
+            }
+
+            return list;
+        }
+        
     }
 }
